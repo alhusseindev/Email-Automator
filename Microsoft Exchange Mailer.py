@@ -36,17 +36,16 @@ messages_retrieved_from_junkfolder = junk_folder.get_messages(limit= 5, download
 
 #Taking care of messages
 our_messages = []
-
-for message in messages_retrieved_from_junkfolder:
-    if(message.subject == "Interested Lead"): #and message.created.day == todays_day):
-        message_body = message.get_body_text()
-        print(message_body)
-        for line in message_body:
-            with open("Todays Leads.txt", "w+") as leads_file:
+with open("Todays Leads.txt", "w+") as leads_file:
+    for message in messages_retrieved_from_junkfolder:
+        if(message.subject == "Interested Lead" and message.created.day == todays_day):
+            message_body = message.get_body_text()
+            print(message_body)
+            for line in message_body:
                 leads_file.writeline("Leads")
                 leads_file.write(message_body)
-        print("Message Date: ", message.created.day)
-        #print(message_body)
+            print("Message Date: ", message.created.day)
+            #print(message_body)
             
 
 
