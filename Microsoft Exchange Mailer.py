@@ -23,7 +23,7 @@ todays_year = todays_date.year
 
 #Accessing mailbox
 
-mailbox = account.mailbox("Email")
+mailbox = account.mailbox("marketing_department@email.com")
 
 inbox = mailbox.inbox_folder()
 sent_folder = mailbox.sent_folder()
@@ -81,7 +81,7 @@ with open("Leads.txt", 'r') as file_being_read:
     """ Sending Leads """
     try:
         my_message = mailbox.new_message()
-        my_message.to.add(["email@email.com"])
+        my_message.to.add(["sales_department@email.com"])
         my_message.subject = "FWD: Lead(s)"
         my_message.body = "Lead(s)\n"
         my_message.attachments.add("Leads.txt")
