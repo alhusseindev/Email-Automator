@@ -30,7 +30,7 @@ sent_folder = mailbox.sent_folder()
 junk_folder = mailbox.junk_folder()
 messages_retrieved_from_inbox = inbox.get_messages()
 messages_retrieved_from_sentfolder = sent_folder.get_messages()
-messages_retrieved_from_junkfolder = junk_folder.get_messages(limit= 5, download_attachments= True)
+messages_retrieved_from_junkfolder = junk_folder.get_messages(limit= 30, download_attachments= True)
 
 
 
